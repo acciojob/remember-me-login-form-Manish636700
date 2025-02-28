@@ -6,16 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const rem = document.getElementById("checkbox");
     const login = document.getElementById("login-form");
 
-    // Retrieve saved credentials
-    const saveuser = localStorage.getItem("saveuser");
-    const savepass = localStorage.getItem("savepass");
-
-    // Show "Login as existing user" button if credentials exist
-    
-
-    // Handle form submission
     login.addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent form refresh
+        event.preventDefault(); 
 
         const user = username.value.trim();
         const pass = password.value.trim();
@@ -28,17 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("saveuser", user);
                 localStorage.setItem("savepass", pass);
                 alert("Credentials are stored in localStorage");
-                exist.style.display = "block"; // Show button immediately
+                exist.style.display = "block"; 
             } else {
                 localStorage.removeItem("saveuser");
                 localStorage.removeItem("savepass");
                 alert("Credentials are not stored");
-                exist.style.display = "none"; // Hide button if "Remember Me" not checked
+                exist.style.display = "none"; 
             }
         }
     });
 
-    // Handle "Login as existing user" button click
+
     exist.addEventListener("click", () => {
         alert(`Logged in as ${saveuser}`);
     });
