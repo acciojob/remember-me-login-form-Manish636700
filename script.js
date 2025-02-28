@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const savepass = localStorage.getItem("savepass");
 
     // Show "Login as existing user" button if credentials exist
-    if (saveuser && savepass) {
-        exist.style.display = "block"; 
-    }
+    
 
     // Handle form submission
     login.addEventListener("submit", (event) => {
